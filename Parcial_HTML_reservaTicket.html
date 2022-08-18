@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="Parcial_CSS_reservaTicket.css" rel="stylesheet" />
+        <title>1er Parcial - Resserva Ticket</title>
+</head>
+<body>
+    <div id="agrupar">
+        <header>
+            <h1 id="titulo">Reserva de Ticket</h1>
+        </header>
+        <form name="laReserva" method="post" action="procesar.php" target="_blank" onsubmit="enviarMensaje()" autocomplete="off">
+            <div id="contenedor">
+                <div id="subContenedor">
+                    <p>Nombre </p>
+                    <input type="text" pattern="[A-Za-z]{2,20}" name="t_nombre" id="t_nombre" required title="(Min: 2 - Max: 20) Solo letras Mayusculas y/o Minusculas">
+                </div>
+                <div id="subContenedor">
+                    <p>Espectaculo</p>
+                    <select name="combo" id="t_espectaculo" required>
+                        <option value="">Seleccionar</option>
+                        <option value="Super humor">Super humor</option>
+                        <option value="La historia del chip">La historia del chip</option>
+                        <option value="Laberinto de los espejos">Laberinto de los espejos</option>
+                    </select>
+                </div>
+                <div id="subContenedor">
+                    <p>Fecha</p>
+                    <input type="date" placeholder="dd-mm-yyyy" name="t_fecha" required id="t_fecha" /> <!--EL ATRIBUTO MIN ESTA AUTOMATIZADO CON JAVASCRIPT setDiaMin()-->
+                </div>
+                <div id="subContenedor">
+                    <p>Cantidad tickets </p>
+                    <input type="number" name="t_numero" min="1" required id="t_numero" />
+                </div>
+                <div id="subContenedor">
+                    <p>Email </p>
+                    <input type="email" pattern="[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="t_correo" required id="t_correo" title="Ejemplo: email@dominio.com" />
+                </div>
+                <div id="subContenedor">
+                    <input type="submit" value="Reservar" id="submit" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="Parcial_JAVASCRIPT_reservaTicket.js"></script>
+</body>
+</html>
